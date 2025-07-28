@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="music-player">
+        <!-- Header -->
+        <div class="player-header">
+            <h1><i class="fas fa-music"></i> Music Player</h1>
+        </div>
+
+        <!-- Song Information -->
+        <div class="song-info">
+            <div class="song-artwork">
+                <img src="https://images.pexels.com/photos/1540338/pexels-photo-1540338.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop" alt="Song Artwork" id="artwork">
+                <div class="play-overlay" id="playOverlay">
+                    <i class="fas fa-play"></i>
+                </div>
+            </div>
+            <div class="song-details">
+                <h2 id="songTitle">Song Title</h2>
+                <p id="artistName">Artist Name</p>
+                <div class="song-duration">
+                    <span id="currentTime">0:00</span>
+                    <span id="totalTime">0:00</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar">
+                <div class="progress" id="progress"></div>
+                <div class="progress-dot" id="progressDot"></div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button class="control-btn" id="prevBtn">
+                <i class="fas fa-backward"></i>
+            </button>
+            <button class="control-btn play-btn" id="playBtn">
+                <i class="fas fa-play"></i>
+            </button>
+            <button class="control-btn" id="nextBtn">
+                <i class="fas fa-forward"></i>
+            </button>
+            <button class="control-btn" id="shuffleBtn">
+                <i class="fas fa-random"></i>
+            </button>
+            <button class="control-btn" id="repeatBtn">
+                <i class="fas fa-redo"></i>
+            </button>
+        </div>
+
+        <!-- Volume Control -->
+        <div class="volume-container">
+            <i class="fas fa-volume-up volume-icon"></i>
+            <div class="volume-slider">
+                <input type="range" id="volumeSlider" min="0" max="100" value="50">
+            </div>
+        </div>
+
+        <!-- Playlist Toggle -->
+        <div class="playlist-toggle">
+            <button id="playlistBtn">
+                <i class="fas fa-list"></i> Playlist
+            </button>
+        </div>
+
+        <!-- Playlist -->
+        <div class="playlist" id="playlist">
+            <div class="playlist-header">
+                <h3>Playlist</h3>
+                <button class="close-playlist" id="closePlaylist">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="playlist-items" id="playlistItems">
+                <!-- Playlist items will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Settings -->
+        <div class="settings">
+            <label class="autoplay-toggle">
+                <input type="checkbox" id="autoplayToggle">
+                <span class="slider"></span>
+                <span class="label">Autoplay</span>
+            </label>
+        </div>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="audio" preload="metadata"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
